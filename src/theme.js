@@ -19,7 +19,7 @@ export const tokens = (mode) => ({
           100: "#d0d1d5",
           200: "#a1a4aa",
           300: "#727680",
-          400: "#434955",
+          400: "#1f2a40",
           500: "#141b2b",
           600: "#101622",
           700: "#0c101a",
@@ -124,7 +124,7 @@ export const themeSettings = (mode) => {
   return {
     pallete: {
       mode: mode,
-      ...colors(
+      colors:
         mode === "dark"
           ? {
               primary: {
@@ -157,8 +157,7 @@ export const themeSettings = (mode) => {
               background: {
                 default: "#fcfcfc",
               },
-            }
-      ),
+            },
     },
     typography: {
       fontFamily: ["Source Sans Pro", "sans - serif"].join(","),
