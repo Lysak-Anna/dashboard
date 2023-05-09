@@ -7,12 +7,13 @@ import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { useContext } from "react";
-import { colorModeContext, tokens } from "../../theme";
+import { ColorModeContext, tokens } from "../../theme";
 
 export default function Topbar() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const colorMode = useContext(colorModeContext);
+  const colorMode = useContext(ColorModeContext);
+
   return (
     <Box display="flex" justifyContent="space-between" p={2}>
       <Box

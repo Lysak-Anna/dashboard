@@ -124,40 +124,40 @@ export const themeSettings = (mode) => {
   return {
     pallete: {
       mode: mode,
-      colors:
-        mode === "dark"
-          ? {
-              primary: {
-                main: colors.primary[500],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                dark: colors.grey[700],
-                main: colors.grey[500],
-                light: colors.grey[100],
-              },
-              background: {
-                default: colors.primary[500],
-              },
-            }
-          : {
-              primary: {
-                main: colors.primary[100],
-              },
-              secondary: {
-                main: colors.greenAccent[500],
-              },
-              neutral: {
-                dark: colors.grey[700],
-                main: colors.grey[500],
-                light: colors.grey[100],
-              },
-              background: {
-                default: "#fcfcfc",
-              },
+
+      ...(mode === "dark"
+        ? {
+            primary: {
+              main: colors.primary[500],
             },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              light: colors.grey[100],
+            },
+            background: {
+              default: colors.primary[500],
+            },
+          }
+        : {
+            primary: {
+              main: colors.primary[100],
+            },
+            secondary: {
+              main: colors.greenAccent[500],
+            },
+            neutral: {
+              dark: colors.grey[700],
+              main: colors.grey[500],
+              light: colors.grey[100],
+            },
+            background: {
+              default: "#fcfcfc",
+            },
+          }),
     },
     typography: {
       fontFamily: ["Source Sans Pro", "sans - serif"].join(","),
@@ -190,9 +190,10 @@ export const themeSettings = (mode) => {
   };
 };
 
-export const colorModeContext = createContext({
+export const ColorModeContext = createContext({
   toggleColorMode: () => {},
 });
+
 export const useMode = () => {
   const [mode, setMode] = useState("dark");
 
